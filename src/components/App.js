@@ -9,13 +9,18 @@ function App() {
 const list = data.board.list
 const [lists, setLists] = useState(list);
 
-// console.log(titleList);
-
+const handleListNew = () => {
+  console.log('me piden añadir una lista');
+  const newList = [...lists];
+  newList.push({title: "", cards: Array(0)});
+  setLists(newList); 
+}
+console.log(lists);
 
   return (
     <div className="App">
       <Header/>
-      <Board lists = {lists} />
+      <Board lists = {lists} handleListNew = {handleListNew} />
     </div>
   );
 }

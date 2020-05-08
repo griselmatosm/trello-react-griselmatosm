@@ -2,18 +2,12 @@ import React from 'react';
 import '../styles/List.scss';
 
 function ListInput(props) {
-  const title = props.title;
-  console.log( title);
-
-  
   
   const handleInput = (ev) => {
   const data = {
       inputValue: ev.target.value
     }
     console.log(data);
-    
-
   }
   return (
   <input 

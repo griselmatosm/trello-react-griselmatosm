@@ -5,7 +5,6 @@ import ListCard from './ListCard';
 import ListFooter from './ListFooter';
 
 function List(props) {
-  console.log(props);
 
   const card = props.itemList.cards;
   const cards = card.map(item => <ListCard key = {item.id} cardData = {item} />)

@@ -13,7 +13,7 @@ function Board(props) {
   return (
     <main className="app-board d-flex flex-nowrap">
       {lists}
-      <ListNew />
+      <ListNew handleListNew = {props.handleListNew} />
     </main>
   );
 }
