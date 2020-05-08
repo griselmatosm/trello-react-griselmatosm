@@ -2,7 +2,10 @@ import React from 'react';
 import '../styles/List.scss';
 
 function ListInput(props) {
-  console.log(props);
+  const title = props.title;
+  console.log( title);
+
+  
   
   const handleInput = (ev) => {
   const data = {

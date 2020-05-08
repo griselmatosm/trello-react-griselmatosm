@@ -7,7 +7,8 @@ function Board(props) {
   // console.log(props.titleList);
   
   const list = props.lists;
-  const lists = list.map((item, i) => <List key={i} itemList={item} titleList = {props.titleList} />);
+  const lists = list
+  .map((item, i) => <List key={i} itemList={item}/>);
 
   return (
     <main className="app-board d-flex flex-nowrap">
