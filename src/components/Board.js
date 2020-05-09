@@ -8,7 +8,7 @@ function Board(props) {
   
   const list = props.lists;
   const lists = list
-  .map((item, i) => <List key={i} itemList={item} cards = {props.cards} handleNewCard = {props.handleNewCard} handleListDelete = {props.handleListDelete}/>);
+  .map((item, i) => <List key={i} itemList={item} cards = {props.cards} handleNewCard = {props.handleNewCard} handleListDelete = {props.handleListDelete} handleListRight = {props.handleListRight} handleListLeft = {props.handleListLeft}/>);
 
   return (
     <main className="app-board d-flex flex-nowrap">

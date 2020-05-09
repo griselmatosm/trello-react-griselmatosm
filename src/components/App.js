@@ -26,6 +26,24 @@ function App() {
     setLists(delList)   
   }
 
+  const handleListRight = (id) => {
+    console.log('me piden mover esta lista a la derecha: ', id);
+    const currentList = [...lists];
+    const delList = currentList.splice(id, 1)
+    console.log(delList, currentList);
+    currentList.splice((id + 1), 0, delList[0]);
+    setLists(currentList)     
+  }
+
+  const handleListLeft = (id) => {
+    console.log('me piden mover esta lista a la derecha: ', id);
+    const currentList = [...lists];
+    const delList = currentList.splice(id, 1)
+    console.log(delList, currentList);
+    currentList.splice((id - 1), 0, delList[0]);
+    setLists(currentList)     
+  }
+
   const handleNewCard = (id) => {
     console.log('me piden añadir una tarjeta de la lista: ', id);
 
@@ -50,7 +68,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Board lists={lists} cards={cards} handleListNew={handleListNew} handleNewCard={handleNewCard} handleListDelete = {handleListDelete} />
+      <Board lists={lists} cards={cards} handleListNew={handleListNew} handleNewCard={handleNewCard} handleListDelete = {handleListDelete} handleListRight = {handleListRight} handleListLeft = {handleListLeft} />
     </div>
   );
 }

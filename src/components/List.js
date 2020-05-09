@@ -16,7 +16,7 @@ function List(props) {
   return (
     <div className="app-list">
       <div className="p-1 rounded-sm bg-primary shadow">
-        <ListHeader idList = {props.itemList.id} title = {props.itemList.title} handleListDelete = {props.handleListDelete} />
+        <ListHeader idList = {props.itemList.id} title = {props.itemList.title} handleListDelete = {props.handleListDelete} handleListRight = {props.handleListRight} handleListLeft = {props.handleListLeft} />
         {cards}
         {/* {newCards} */}
         <ListFooter idList = {props.itemList.id} handleNewCard = {props.handleNewCard} />
