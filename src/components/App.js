@@ -31,7 +31,7 @@ function App() {
     const currentList = [...lists];
     const delList = currentList.splice(id, 1)
     console.log(delList, currentList);
-    currentList.splice((id + 1), 0, delList[0]);
+    currentList.splice((parseInt(id) + 1), 0, delList[0]);
     setLists(currentList)     
   }
 
@@ -40,7 +40,7 @@ function App() {
     const currentList = [...lists];
     const delList = currentList.splice(id, 1)
     console.log(delList, currentList);
-    currentList.splice((id - 1), 0, delList[0]);
+    currentList.splice((parseInt(id) - 1), 0, delList[0]);
     setLists(currentList)     
   }
 

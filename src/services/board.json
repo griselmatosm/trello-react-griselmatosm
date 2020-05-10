@@ -2,7 +2,7 @@
     "board": {
       "list": [
         {
-          "title": "Backlog",
+          "title": "0",
           "cards": [
             {
               "id": "ajdfhjkrfh25",
@@ -17,7 +17,7 @@
           ]
         },
         {
-          "title": "Por hacer",
+          "title": "1",
           "cards": [
             {
               "id": "sdf0s98234n3ki",
@@ -42,7 +42,7 @@
           ]
         },
         {
-          "title": "Haciendo",
+          "title": "2",
           "cards": [
             {
               "id": "qeuryjbcndb65",
@@ -57,7 +57,7 @@
           ]
         },
         {
-          "title": "Hecho",
+          "title": "3",
           "cards": [
             {
               "id": "brueigtrejhgb98",
