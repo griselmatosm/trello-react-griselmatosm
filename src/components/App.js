@@ -9,6 +9,15 @@ function App() {
 
   const [lists, setLists] = useState(list);
   const [cards, setCards] = useState([]);
+  // console.log(lists);
+
+  const handleListInput = (data) => {
+    console.log(data);
+    const list = [...lists];
+    console.log(list[data.idList]);
+    list[data.idList].title = data.inputValue;
+    setLists(list);
+  };
 
   const handleListNew = () => {
     // debugger;
@@ -20,29 +29,29 @@ function App() {
   lists.map((item, i) => (item.id = i));
 
   const handleListDelete = (id) => {
-    console.log('me piden eliminar esta lista: ', id)
+    console.log('me piden eliminar esta lista: ', id);
     const delList = [...lists];
-    delList.splice(id, 1)
-    setLists(delList)   
-  }
+    delList.splice(id, 1);
+    setLists(delList);
+  };
 
   const handleListRight = (id) => {
     console.log('me piden mover esta lista a la derecha: ', id);
     const currentList = [...lists];
-    const delList = currentList.splice(id, 1)
-    console.log(delList, currentList);
-    currentList.splice((parseInt(id) + 1), 0, delList[0]);
-    setLists(currentList)     
-  }
+    const delList = currentList.splice(id, 1);
+    // console.log(delList, currentList);
+    currentList.splice(parseInt(id) + 1, 0, delList[0]);
+    setLists(currentList);
+  };
 
   const handleListLeft = (id) => {
     console.log('me piden mover esta lista a la derecha: ', id);
     const currentList = [...lists];
-    const delList = currentList.splice(id, 1)
-    console.log(delList, currentList);
-    currentList.splice((parseInt(id) - 1), 0, delList[0]);
-    setLists(currentList)     
-  }
+    const delList = currentList.splice(id, 1);
+    // console.log(delList, currentList);
+    currentList.splice(parseInt(id) - 1, 0, delList[0]);
+    setLists(currentList);
+  };
 
   const handleNewCard = (id) => {
     console.log('me piden añadir una tarjeta de la lista: ', id);
@@ -59,16 +68,16 @@ function App() {
           item.cards.push({ id: '', title: '', description: '', tags: Array(0) });
         }
       }
-      return setLists(lists)   
+      return setLists(lists);
     };
-    returnNewCard()
+    returnNewCard();
   };
-  console.log(lists);
+  // console.log(lists);
 
   return (
     <div className="App">
       <Header />
-      <Board lists={lists} cards={cards} handleListNew={handleListNew} handleNewCard={handleNewCard} handleListDelete = {handleListDelete} handleListRight = {handleListRight} handleListLeft = {handleListLeft} />
+      <Board lists={lists} cards={cards} handleListInput={handleListInput} handleListNew={handleListNew} handleNewCard={handleNewCard} handleListDelete={handleListDelete} handleListRight={handleListRight} handleListLeft={handleListLeft} />
     </div>
   );
 }
