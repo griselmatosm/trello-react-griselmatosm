@@ -8,13 +8,12 @@ function App() {
   const list = data.board.list;
 
   const [lists, setLists] = useState(list);
-  const [cards, setCards] = useState([]);
   // console.log(lists);
 
   const handleListInput = (data) => {
     console.log(data);
     const list = [...lists];
-    console.log(list[data.idList]);
+    // console.log(list[data.idList]);
     list[data.idList].title = data.inputValue;
     setLists(list);
   };
@@ -56,10 +55,6 @@ function App() {
   const handleNewCard = (id) => {
     console.log('me piden añadir una tarjeta de la lista: ', id);
 
-    // const newCard = [...cards];
-    // newCard.push({id: "", title: "", description: "", tags: Array(0)});
-    // setCards(newCard)
-
     const returnNewCard = () => {
       // debugger;
       for (const item of lists) {
@@ -77,7 +72,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Board lists={lists} cards={cards} handleListInput={handleListInput} handleListNew={handleListNew} handleNewCard={handleNewCard} handleListDelete={handleListDelete} handleListRight={handleListRight} handleListLeft={handleListLeft} />
+      <Board lists={lists} handleListInput={handleListInput} handleListNew={handleListNew} handleNewCard={handleNewCard} handleListDelete={handleListDelete} handleListRight={handleListRight} handleListLeft={handleListLeft} />
     </div>
   );
 }
