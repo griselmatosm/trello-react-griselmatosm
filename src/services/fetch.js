@@ -1,10 +1,10 @@
 const getDataFromJson = () => 
- fetch('./board.json')
-    .then((response) => response.text())
+ fetch('./api/board.json')
+    .then((response) => response.json())
     .then((data) => {
       let lists = [];
       lists = data.board.list
       return lists;    
     });
 
-export { getDataFromJson };
+export default { getDataFromJson };

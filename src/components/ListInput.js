@@ -2,8 +2,6 @@ import React from 'react';
 import '../styles/List.scss';
 
 function ListInput(props) {
-  console.log(props.idList);
-  
   
   const handleInput = (ev) => {
   const data = {

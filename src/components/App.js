@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import '../styles/App.scss';
 import Header from './Header';
 import Board from './Board';
-import data from '../services/board.json';
+import api from '../services/fetch';
 
 function App() {
-  const list = data.board.list;
+  const [lists, setLists] = useState([]);
 
-  const [lists, setLists] = useState(list);
-  // console.log(lists);
+  useEffect(() => {
+    api.getDataFromJson().then((data) => {
+      setLists(data);
+    });
+  }, []);
 
   const handleListInput = (data) => {
     console.log(data);
