@@ -3,15 +3,30 @@ import '../styles/App.scss';
 import Header from './Header';
 import Board from './Board';
 import api from '../services/fetch';
+import ls from '../services/local-storage';
 
 function App() {
   const [lists, setLists] = useState([]);
 
+  // useEffect(() => {
+  //   api.getDataFromJson().then((data) => {
+  //     setLists(data);
+  //   });
+  // }, []);
+
   useEffect(() => {
-    api.getDataFromJson().then((data) => {
-      setLists(data);
-    });
+    if (ls.isValid()) {
+      const lsData = ls.get();
+      setLists(lsData);
+    } else {
+      api.getDataFromJson().then(setLists);
+    }
   }, []);
+
+  useEffect(() => {
+    ls.set(lists);
+  });
+
 
   const handleListInput = (data) => {
     console.log(data);
